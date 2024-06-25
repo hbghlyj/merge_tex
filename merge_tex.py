@@ -18,7 +18,7 @@ def mergefiles(file):
     for line in file.readlines():
         #find input lines that are not commented
         if(line.find("\\input") > -1  and (line.find("%") < 0 or line.find("%") > 1)):
-            m = re.search("\input{(.+?)}", line)
+            m = re.search("\\input{(.+?)}", line)
             filepath = m.group(1)
             #add tex extension is missing
             if (filepath.find(".tex") < 0):
